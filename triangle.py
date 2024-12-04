@@ -8,10 +8,10 @@ def maxPathSum(tri):
     '''
     Please fill in your answer to replace the "?" in the code block
     '''
-    for row in range(?, -1, -1):
-        for col in range(row):
-            tri[?][col] += max(tri[?][?], tri[?][?])
-    return tri[?][?]
+    for row in range(-2, -1, -1):
+        for col in range(len(tri[row])):
+            tri[row][col] += max(tri[row + 1][col], tri[row + 1][col + 1])
+    return tri[0][0]
 
 # Test case #1: output = 30 (=7+3+8+7+5)
 print(maxPathSum([
